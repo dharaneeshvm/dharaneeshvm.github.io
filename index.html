@@ -18,20 +18,6 @@
             color: #fff;
             text-align: center;
             padding: 1em 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            animation: fadeInDown 0.8s ease-in-out;
-        }
-
-        @keyframes fadeInDown {
-            0% {
-                transform: translateY(-100%);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
         }
 
         section {
@@ -74,6 +60,24 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+
+        /* Floating Animation */
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
@@ -122,6 +126,9 @@
     <footer>
         &copy; 2024 Your Name - Portfolio
     </footer>
+
+    <!-- Floating Button -->
+    <div class="floating-btn">Contact</div>
 
     <script>
         // Smooth scrolling
