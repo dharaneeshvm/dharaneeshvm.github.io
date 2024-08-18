@@ -18,8 +18,7 @@ Welcome to my portfolio website! This site is a reflection of my journey in Elec
 ## 🌍 Live Site
 
 Check out the live version of my portfolio:  
-**[https://username.github.io/my-portfolio](https://username.github.io/my-portfolio)**  
-*(Replace `username` with your GitHub username)*
+**[https://dharaneeshvm.github.io/](https://dharaneeshvm.github.io/)**  
 
 ## 🛠️ How to Use
 
