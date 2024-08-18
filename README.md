@@ -24,4 +24,4 @@ Check out the live version of my portfolio:
 
 1. **Clone or download** the repository:
    ```bash
-   git clone https://github.com/username/my-portfolio.git
+   git clone https://github.com/dharaneeshvm/dharaneeshvm.github.io.git
