@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Portfolio</title>
+    <style>
+        
+        body, h1, h2, p, ul {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1F2833; 
+            color: #C5C6C7; 
+        }
+
+        header {
+            background-color: #0B0C10; 
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        .education {
+            padding: 50px 20px;
+            background-color: #1F2833; 
+            color: #C5C6C7; 
+        }
+
+        .education h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #66FCF1; 
+            margin-bottom: 40px;
+        }
+
+        .education-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background-color: #0B0C10; 
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-item h2 {
+            font-size: 24px;
+            color: #66FCF1; 
+            margin-bottom: 10px;
+        }
+
+        .education-item h3 {
+            font-size: 20px;
+            color: #45A29E; 
+            margin-bottom: 10px;
+        }
+
+        .education-item p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #66FCF1; 
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links li a {
+            color: #C5C6C7; 
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #66FCF1; 
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #C5C6C7; 
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .about {
+            padding-top: 100px; 
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .about h1 {
+            font-size: 36px;
+            color: #66FCF1; 
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #0B0C10;
+            color: #C5C6C7; 
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #0B0C10;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .burger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about">
+            <h1>About Me</h1>
+            <h1>Education</h1>
+            <div class="education-container">
+                <div class="education-item">
+                    <h2>Bachelor of Engineering in Electrical and Electronics Engineering</h2>
+                    <h3>M.Kumarasamy College of Engineering</h3>
+                    <p><strong>Year:</strong> 2021 - 2025</p>
+                    <p>Focused on power systems, control systems, and electronics.</p>
+                </div>
+                
+                <div class="education-item">
+                    <h2>HIGHER SECONDARY CERTIFICATE</h2>
+                    <h3>BHARATHI HIGHER SECONDARY SCHOOL</h3>
+                    <p><strong>Year:</strong> 2020 - 2021</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+            const navLinksItems = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                burger.classList.toggle('toggle');
+            });
+
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    burger.classList.remove('toggle');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

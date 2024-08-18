@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        
+        body, h1, h2, p, ul {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1F2833; 
+            color: #C5C6C7;
+        }
+
+        header {
+            background-color: #0B0C10; 
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #66FCF1; 
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links li a {
+            color: #C5C6C7; 
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #66FCF1; 
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #C5C6C7; 
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .home-content {
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .home-content img {
+            max-width: 200px; 
+            border-radius: 50%; 
+            margin: 20px auto; 
+            display: block; 
+            border: 5px solid #66FCF1; 
+        }
+
+        .home-content h1 {
+            font-size: 36px;
+            color: #66FCF1;
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            font-size: 18px;
+            color: #C5C6C7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #0B0C10; 
+            color: #C5C6C7; 
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #0B0C10;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .burger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="home-content">
+            <img src="photo.jpg" alt="Profile Photo">
+            <h1>Dharaneesh V M</h1>
+            <p>Hello! I'm Dharaneesh V M, a passionate developer with expertise in Electrical and Electronics Engineering (EEE) and a focus on power systems, control systems, and electronics. Explore my projects and get to know more about my work.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+            const navLinksItems = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                
+                burger.classList.toggle('toggle');
+            });
+
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    burger.classList.remove('toggle');
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            });
+        });
+    </script>
+</body>
+</html>

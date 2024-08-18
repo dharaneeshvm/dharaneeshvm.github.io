@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - My Portfolio</title>
+    <style>
+        
+        body, h1, h2, p, ul {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1F2833; 
+            color: #C5C6C7; 
+        }
+
+        header {
+            background-color: #0B0C10; 
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #66FCF1; 
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links li a {
+            color: #C5C6C7; 
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #66FCF1; 
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #C5C6C7;
+            transition: all 0.3s ease;
+        }
+
+       
+        .projects {
+            padding-top: 100px; 
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .projects h1 {
+            font-size: 36px;
+            color: #66FCF1; 
+            margin-bottom: 20px;
+        }
+
+        .projects p {
+            font-size: 20px;
+        }
+
+        .project-item {
+            margin-bottom: 20px;
+            background-color: #0B0C10;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            color: #C5C6C7; 
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #0B0C10; 
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .burger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="projects">
+            <h1>My Projects</h1>
+            <div class="project-item">
+                <h2>SMART STICK USING ARDUINO</h2>
+                <p align="left">This work presents a new prototype of navigation system on a cane which can be used as a travel aid for blind people. The product developed is light in weight, hence, does not cause fatigue to the user. This project is developed by keeping in view the affordability and reliability. An obstacle as close as 4cm can be detected by this module. A resolution of 15cm of obstacle distance has been designed and achieved. This system can also detect potholes on the path.</p>
+            </div>
+            <div class="project-item">
+                <h2>SOLAR WIRELESS ELECTRIC VEHICLE CHARGING SYSTEM</h2>
+                <p align="left">The system demonstrates a solar powered wireless   charging system for electric vehicles that can be integrated in the road. Fast charging of infrastructure are required to make EVs widely accepted, as charging time is the primary obstacle to EV adoption. Having an acceptable charging infrastructure is a crucial aspect of this change. With the battery management unit, a wireless charging system will be established. This stored energy is utilized to charge Electric Vehicles. There is no need to stop for charging because the EV can do so while it is i motion; the system is powered by solar energy; and there is no need for an additional power source.</p>
+            </div>
+            <div class="project-item">
+                <h2>IOT BASED BATTERY MONITORING SYSTEM</h2>
+                <p align="left">Battery management systems are crucial in electric vehicle technology because they monitor and control how rechargeable battery packs are discharged and charged, increasing operating efficiency. When a battery is being charged or discharged, monitoring entails keeping a tight check on the crucial operational elements including voltage, current, fire, and temperature. The resources we currently utilize for power are expensive and ineffective. Because of this, we must rely on products that are both affordable and environmentally friendly to the least extent possible. This hardware-timed sensor system monitors a number of parameters, including temperature, voltage, and battery and fire percentages, and provides the data online so you can determine when everything has reached the proper level.</p>
+            </div>
+            <div class="project-item">
+                <h2>UPS BATTERY MONITORING SYSTEM USING GSM</h2>
+                <p align="left">The implementation of this system provides a reliable and cost-effective solution for UPS battery management by reducing manual monitoring efforts and enhancing the overall safety and performance of the power backup systems. Validation of the system through rigorous testing under various load scenarios confirms its effectiveness in real-world applications, suggesting its broad applicability in both commercial and industrial UPS systems. The BMS not only contributes to operational excellence but also supports preventive maintenance strategies, significantly  reducing  the  risk  of  unexpected  power  failures  and  associated  costs.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+            const navLinksItems = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                burger.classList.toggle('toggle');
+            });
+
+            
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    burger.classList.remove('toggle');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
